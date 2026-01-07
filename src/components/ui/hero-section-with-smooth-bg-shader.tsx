@@ -175,7 +175,7 @@ export function HeroSection({
                       ))}
                     </div>
                   )}
-                  <span className="text-orange-100">{trustBadge.text}</span>
+                  <span className="text-orange-800 font-semibold">{trustBadge.text}</span>
                 </div>
               </div>
             )}
@@ -183,12 +183,12 @@ export function HeroSection({
             <div className="text-center space-y-6 max-w-5xl mx-auto px-4">
               <div className="space-y-2">
                 <h1
-                  className={`text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-amber-100 via-emerald-100 to-teal-200 bg-clip-text text-transparent animate-fade-in-up animation-delay-200 ${titleClassName}`}
+                  className={`text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-amber-500 via-emerald-600 to-teal-600 bg-clip-text text-transparent drop-shadow-lg animate-fade-in-up animation-delay-200 ${titleClassName}`}
                   style={{ fontFamily, fontWeight }}
                 >
                   {heroHeadline.line1}
                 </h1>
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-amber-200 via-emerald-200 to-teal-300 bg-clip-text text-transparent animate-fade-in-up animation-delay-400">
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-amber-500 via-emerald-700 to-teal-700 bg-clip-text text-transparent drop-shadow-lg animate-fade-in-up animation-delay-400">
                   {heroHeadline.line2}
                 </h1>
               </div>
@@ -196,7 +196,7 @@ export function HeroSection({
               {heroSubtitle && (
                 <div className="max-w-3xl mx-auto animate-fade-in-up animation-delay-600">
                   <p
-                    className={`text-lg md:text-xl lg:text-2xl text-white/95 font-light leading-relaxed ${descriptionClassName}`}
+                    className={`text-lg md:text-xl lg:text-2xl text-slate-800 font-medium leading-relaxed drop-shadow-sm ${descriptionClassName}`}
                   >
                     {heroSubtitle}
                   </p>

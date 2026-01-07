@@ -1,7 +1,15 @@
-import {  Home,  Settings,  Mail, User, FileText, Lock,  BadgeDollarSignIcon, MessageSquareIcon } from "lucide-react";
+import { Home, Settings, User, BadgeDollarSignIcon, MessageSquareIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { ExpandableTabs } from "./ui/expandable-tabs";
 
+
+function Logo(){
+  <image href="/assets/logo.png"/>
+}
+
 function Navbar() {
+  const navigate = useNavigate();
+
   const tabs = [
     { title: "Home", icon: Home },
     { title: "Features", icon: Settings },
@@ -9,31 +17,45 @@ function Navbar() {
     { title: "Contact", icon: MessageSquareIcon },
   ];
 
+  const handleChange = (index: number | null) => {
+    if (index === null) return;
+    const tab = tabs[index];
+    if (!tab) return;
+
+    if (tab.title === "Home") navigate("/");
+    if (tab.title === "Features") navigate("/features");
+    if (tab.title === "Pricing") navigate("/pricing"); 
+    
+  };
+
   return (
     <div className="flex flex-col gap-4">
-      <ExpandableTabs tabs={tabs} />
+      <ExpandableTabs tabs={tabs} onChange={handleChange} />
     </div>
   );
 }
 
-function CustomColorDemo() {
+function AuthButton() {
   const tabs = [
-    { title: "Profile", icon: User },
-    { title: "Messages", icon: Mail },
-    { type: "separator" },
-    { title: "Documents", icon: FileText },
-    { title: "Privacy", icon: Lock },
+    { title: "Login", icon: User },
   ];
+
+  const navigate = useNavigate();
+
+  const handleChange = (index: number | null) => {
+    if (index === null) return;
+    navigate("/auth");
+  };
 
   return (
     <div className="flex flex-col gap-4">
       <ExpandableTabs 
         tabs={tabs} 
         activeColor="text-blue-500"
-        className="border-blue-200 dark:border-blue-800" 
+        onChange={handleChange}
       />
     </div>
   );
 }
 
-export { Navbar, CustomColorDemo };
+export { Logo, Navbar, AuthButton };

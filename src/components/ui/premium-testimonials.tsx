@@ -1,52 +1,31 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
-import { Quote, Star, ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
+import { Quote, ArrowLeft, ArrowRight, Sparkles, Timer, Computer, ArrowUpNarrowWideIcon, Scale } from 'lucide-react';
 
 const testimonials = [
   {
-    name: "Sarah Chen",
-    role: "CEO, TechFlow Solutions",
-    company: "TechFlow",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
-    rating: 5,
-    text: "Lord AI transformed our entire operation. We've seen a 300% increase in efficiency and saved over $2M in operational costs. The autonomous agents work flawlessly.",
-    results: ["300% efficiency increase", "$2M cost savings", "24/7 automation"]
+    name: "From Hours to Minutes",
+    avatar: Timer,
+    text: "Marketing teams spend 15+ hours weekly on repetitive tasks. Raftra automates creative production,ad fatigue detection, budget optimization, and commerce managemnet-freeing your team to focus on strategy and growth.",
+    results: ["save 15+ hours/week"]
   },
   {
-    name: "Marcus Johnson",
-    role: "CTO, DataDrive Inc",
-    company: "DataDrive",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    rating: 5,
-    text: "The AI voice agents are revolutionary. Our customer satisfaction increased by 40% while reducing response time from hours to seconds. Incredible ROI.",
-    results: ["40% satisfaction boost", "Instant responses", "Seamless integration"]
+    name: "Multi-Platform Chaos, Simplified",
+    avatar: Computer,
+    text: "Managing Meta, Google, LinkedIn, Instagram separately is inefficient and error-prone. Raftra provides one unified dashboard to launch, monitor and optimize campaigns across all platform simultaneously.",
+    results: ["4 platform, 1 dashboard"]
   },
   {
-    name: "Elena Rodriguez",
-    role: "VP Operations, ScaleUp Co",
-    company: "ScaleUp",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
-    rating: 5,
-    text: "From workflow automation to social media management, Lord AI handles everything. Our team can finally focus on strategy instead of repetitive tasks.",
-    results: ["Full automation", "Strategic focus", "Team productivity"]
+    name: "Stop guessing, Start growing",
+    avatar: ArrowUpNarrowWideIcon,
+    text: "Without AI-powered insights, brands waste ad spend on underperforming campaigns. Raftra’s ROAS prediction and financial insights ensure every rupee is invested strategically for maximum returns.",
+    results: ["342% average ROI"]
   },
   {
-    name: "David Kim",
-    role: "Founder, GrowthLab",
-    company: "GrowthLab",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    rating: 5,
-    text: "The custom AI systems delivered results beyond our expectations. Revenue increased 150% while operational overhead decreased significantly.",
-    results: ["150% revenue growth", "Reduced overhead", "Scalable systems"]
-  },
-  {
-    name: "Lisa Thompson",
-    role: "Director, InnovateCorp",
-    company: "InnovateCorp",
-    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop&crop=face",
-    rating: 5,
-    text: "Exceptional AI solutions that actually work. The implementation was smooth, and the results were immediate. Best investment we've made.",
-    results: ["Immediate results", "Smooth integration", "High ROI"]
+    name: "Scale without Breaking",
+    avatar: Scale,
+    text: "Growing brands struggle to scale campaigns without increasing team size. Raftra’s AI handles creative refresh, fatigue detection, and optimization automatically—allowing you to 10x output with the same team.",
+    results: ["10x campaign capacity"]
   }
 ];
 
@@ -89,13 +68,9 @@ export function PremiumTestimonials() {
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
-        duration: 0.8, 
-        ease: [0.23, 0.86, 0.39, 0.96] 
-      }
     }
   };
 
@@ -125,7 +100,7 @@ export function PremiumTestimonials() {
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
         {/* Animated gradient mesh */}
-        <motion.div 
+        <motion.div
           className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.08] via-purple-500/[0.05] to-rose-500/[0.08]"
           animate={{
             backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'],
@@ -139,7 +114,7 @@ export function PremiumTestimonials() {
             backgroundSize: '400% 400%'
           }}
         />
-        
+
         {/* Moving light orbs */}
         <motion.div
           className="absolute top-1/3 left-1/5 w-72 h-72 bg-indigo-400/15 rounded-full blur-3xl"
@@ -192,7 +167,7 @@ export function PremiumTestimonials() {
         ))}
       </div>
 
-      <motion.div 
+      <motion.div
         ref={containerRef}
         className="relative z-10 max-w-7xl mx-auto px-6"
         variants={staggerContainer}
@@ -201,59 +176,36 @@ export function PremiumTestimonials() {
         viewport={{ once: true, margin: "-100px" }}
       >
         {/* Header */}
-        <motion.div 
-          className="text-center mb-20"
+        <motion.h2
+          className="text-4xl sm:text-6xl md:text-7xl font-bold mb-6 tracking-tight"
           variants={fadeInUp}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.div
-            className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.08] border border-white/[0.15] backdrop-blur-sm mb-6"
-            whileHover={{ scale: 1.05, borderColor: "rgba(255, 255, 255, 0.3)" }}
+          <motion.span
+            className="bg-clip-text  text-center flex justify-center"
+            animate={{
+              backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            style={{ backgroundSize: '200% 200%' }}
           >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            >
-              <Sparkles className="h-4 w-4 text-indigo-300" />
-            </motion.div>
-            <span className="text-sm font-medium text-white/80">
-              ✨ Client Success Stories
-            </span>
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-          </motion.div>
+            The Growth OS Your Brand Needs
+          </motion.span>
+        </motion.h2>
 
-          <motion.h2 
-            className="text-4xl sm:text-6xl md:text-7xl font-bold mb-8 tracking-tight"
-            variants={fadeInUp}
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
-              Trusted by
-            </span>
-            <br />
-            <motion.span 
-              className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-purple-300 to-rose-300"
-              animate={{
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              style={{
-                backgroundSize: '200% 200%'
-              }}
-            >
-              How Raftra Works
-            </motion.span>
-          </motion.h2>
-          
-          <motion.p 
-            className="text-xl sm:text-2xl text-white/60 max-w-4xl mx-auto leading-relaxed"
-            variants={fadeInUp}
-          >
-            From setup to scale in under 30 minutes. Our AI handles the complexity while you focus on Growth your business.
-          </motion.p>
-        </motion.div>
+        <motion.p
+          className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed text-center m-2"
+          variants={fadeInUp}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          Traditional marketing tools are fragmented, manual, and time-consuming. Raftra unifies everything into one intelligent platform that works 24/7 for your brand's growth.
+        </motion.p>
+
+
 
         {/* Main Testimonial Display */}
         <div className="relative max-w-6xl mx-auto mb-16">
@@ -274,7 +226,7 @@ export function PremiumTestimonials() {
                 }}
                 className="absolute inset-0"
               >
-                <div className="relative h-full bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl rounded-3xl border border-white/[0.15] p-8 md:p-12 overflow-hidden group">
+                <div className="relative h-full bg-gradient-to-br from-white/[0.12] to-white/[0.04] backdrop-blur-2xl rounded-3xl border border-white/[0.25] p-8 md:p-12">
                   {/* Animated background gradient */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.08] via-purple-500/[0.05] to-rose-500/[0.08] rounded-3xl"
@@ -308,23 +260,26 @@ export function PremiumTestimonials() {
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="w-24 h-24 mx-auto md:mx-0 rounded-full overflow-hidden border-4 border-white/20 relative">
-                          <img 
-                            src={testimonials[currentIndex].avatar} 
-                            alt={testimonials[currentIndex].name}
-                            className="w-full h-full object-cover"
-                          />
+                        <div className="justify-center flex text-center w-24 h-24 mx-auto md:mx-0 rounded-full overflow-hidden border-4 border-white/20 relative">
+                          {(() => {
+                            const AvatarIcon = testimonials[currentIndex].avatar;
+                            return (
+                              <div className="w-24 h-24 mx-auto md:mx-0 rounded-full flex items-center justify-center bg-gradient-to-br from-indigo-400/30 via-purple-400/30 to-rose-400/30 border border-white/30">
+                                <AvatarIcon className="w-10 h-10 text-white" />
+                              </div>
+                            );
+                          })()}
                           <motion.div
                             className="absolute inset-0 bg-gradient-to-br from-indigo-400/20 to-rose-400/20"
                             animate={{ opacity: [0, 0.3, 0] }}
                             transition={{ duration: 3, repeat: Infinity }}
                           />
                         </div>
-                        
+
                         {/* Floating ring animation */}
                         <motion.div
                           className="absolute inset-0 border-2 border-indigo-400/30 rounded-full"
-                          animate={{ 
+                          animate={{
                             scale: [1, 1.4, 1],
                             opacity: [0.5, 0, 0.5]
                           }}
@@ -332,35 +287,15 @@ export function PremiumTestimonials() {
                         />
                       </motion.div>
 
-                      <h3 className="text-2xl font-bold text-white mb-2">
+                      <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">
                         {testimonials[currentIndex].name}
                       </h3>
-                      <p className="text-indigo-300 mb-1 font-medium">
-                        {testimonials[currentIndex].role}
-                      </p>
-                      <p className="text-white/60 mb-4">
-                        {testimonials[currentIndex].company}
-                      </p>
-                      
-                      {/* Star Rating */}
-                      <div className="flex justify-center md:justify-start gap-1 mb-6">
-                        {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: i * 0.1, duration: 0.3 }}
-                          >
-                            <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                          </motion.div>
-                        ))}
-                      </div>
                     </div>
 
                     {/* Content */}
                     <div className="flex-1">
-                      <motion.blockquote 
-                        className="text-xl md:text-2xl text-white/90 leading-relaxed mb-8 font-light italic"
+                      <motion.blockquote
+                        className="text-xl md:text-2xl text-white leading-relaxed mb-10 font-medium"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
@@ -369,7 +304,7 @@ export function PremiumTestimonials() {
                       </motion.blockquote>
 
                       {/* Results */}
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      <div className="flex flex-wrap gap-3">
                         {testimonials[currentIndex].results.map((result, i) => (
                           <motion.div
                             key={i}
@@ -412,11 +347,10 @@ export function PremiumTestimonials() {
                     setDirection(index > currentIndex ? 1 : -1);
                     setCurrentIndex(index);
                   }}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentIndex 
-                      ? 'bg-indigo-400 scale-125' 
-                      : 'bg-white/30 hover:bg-white/50'
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all ${index === currentIndex
+                    ? 'bg-indigo-400 scale-125'
+                    : 'bg-white/30 hover:bg-white/50'
+                    }`}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                 />
