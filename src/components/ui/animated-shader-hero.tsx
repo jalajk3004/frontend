@@ -399,7 +399,7 @@ const Hero: React.FC<HeroProps> = ({
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white">
         {/* Trust Badge */}
         {trustBadge && (
-          <div className="mb-8 animate-fade-in-down">
+          <div className="mt-12 mb-8 animate-fade-in-down">
             <div className="flex items-center gap-2 px-6 py-3 bg-orange-500/10 backdrop-blur-md border border-orange-300/30 rounded-full text-sm">
               {trustBadge.icons && (
                 <div className="flex">
@@ -418,17 +418,17 @@ const Hero: React.FC<HeroProps> = ({
         <div className="text-center space-y-6 max-w-5xl mx-auto px-4">
           {/* Main Heading with Animation */}
           <div className="space-y-2">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-orange-300 via-yellow-400 to-amber-300 bg-clip-text text-transparent animate-fade-in-up animation-delay-200">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-amber-100 via-emerald-100 to-teal-200 bg-clip-text text-transparent animate-fade-in-up animation-delay-200">
               {headline.line1}
             </h1>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent animate-fade-in-up animation-delay-400">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-amber-200 via-emerald-200 to-teal-300 bg-clip-text text-transparent animate-fade-in-up animation-delay-400">
               {headline.line2}
             </h1>
           </div>
           
           {/* Subtitle with Animation */}
           <div className="max-w-3xl mx-auto animate-fade-in-up animation-delay-600">
-            <p className="text-lg md:text-xl lg:text-2xl text-orange-100/90 font-light leading-relaxed">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/95 font-light leading-relaxed">
               {subtitle}
             </p>
           </div>
