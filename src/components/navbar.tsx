@@ -1,4 +1,4 @@
-import { Home, Settings, User, BadgeDollarSignIcon, MessageSquareIcon } from "lucide-react";
+import { Home, Settings, User, BadgeDollarSignIcon, MessageSquareIcon, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ExpandableTabs } from "./ui/expandable-tabs";
 
@@ -38,14 +38,22 @@ function Navbar() {
 function AuthButton() {
   const tabs = [
     { title: "Login", icon: User },
+    { type: "separator" },
+    { title: "Security", icon: Shield },
   ];
 
   const navigate = useNavigate();
 
   const handleChange = (index: number | null) => {
     if (index === null) return;
-    navigate("/auth");
+    const tab = tabs[index];
+    if (!tab) return;
+
+    if (tab.title === "Login") navigate("/auth");
+    if (tab.title === "Security") navigate("/security"); 
+    
   };
+
 
   return (
     <div className="flex flex-col gap-4">

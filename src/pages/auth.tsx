@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Lock, User, Eye, EyeOff, Sparkles, TrendingUp, Zap, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mail, Lock, User, Eye, EyeOff, Sparkles, TrendingUp, Zap, CheckCircle2, AlertCircle, Dot, CircleArrowRightIcon } from 'lucide-react';
 
 export default function Auth() {
   const [authMode, setAuthMode] = useState('login');
@@ -18,9 +18,9 @@ export default function Auth() {
   };
 
   const features = [
-    { icon: TrendingUp, text: 'Scale your campaigns 10x faster' },
-    { icon: Sparkles, text: 'AI-powered insights & automation' },
-    { icon: Zap, text: 'Real-time performance optimization' }
+    { icon: CircleArrowRightIcon, text: 'Scale your campaigns 10x faster' },
+    { icon: CircleArrowRightIcon, text: 'AI-powered insights & automation' },
+    { icon: CircleArrowRightIcon, text: 'Real-time performance optimization' }
   ];
 
   return (

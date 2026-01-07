@@ -9,6 +9,8 @@ import { Route, Routes } from "react-router-dom";
 import Pricing from "./pages/pricing";
 import FullFeatures from "./pages/fullFeatures";
 import Auth from "./pages/auth";
+import MultiStepProfileForm from "./pages/form";
+import SecurityDashboard from "./pages/security";
 
 const Home = () => {
   return (
@@ -48,6 +50,8 @@ function App() {
       <Route path="/auth" element={<Auth />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/features" element={<FullFeatures />} />
+      <Route path="/multistepForm" element={<MultiStepProfileForm />} />
+      <Route path="/security" element={<SecurityDashboard/>}/>
     </Routes>
   );
 }

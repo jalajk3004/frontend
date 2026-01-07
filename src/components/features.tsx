@@ -159,7 +159,7 @@ function Features({ variant = "dark", showCTA = true }: FeaturesProps = {}) {
                 {!isLight && (
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/5 via-cyan-200/5 to-amber-100/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 )}
-                <div className="flex items-center gap-3 relative">
+                <div className="flex items-center gap-3 relative text-white">
                   <span className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200/30 via-cyan-200/25 to-amber-100/25 ring-1 ${
                     isLight ? "text-emerald-700 ring-emerald-200/30" : "text-emerald-900 ring-white/10"
                   }`}>
@@ -171,9 +171,8 @@ function Features({ variant = "dark", showCTA = true }: FeaturesProps = {}) {
                     {feature.title}
                   </h3>
                 </div>
-                <ul className={`mt-3 space-y-1 text-sm leading-relaxed ${
-                  isLight ? "text-slate-600" : "text-slate-200/80"
-                }`}>
+                <ul className="mt-3 space-y-1 text-sm leading-relaxed text-white">
+
                   {feature.description.map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className={`mt-1 h-1.5 w-1.5 rounded-full ${
