@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { User, Briefcase, Users, Phone, Sparkles, TrendingUp } from "lucide-react";
 
 export default function ProfileDashboard() {
-  const [completion, setCompletion] = useState(65);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50">
@@ -32,7 +31,7 @@ export default function ProfileDashboard() {
         {/* GRID: 2 ABOVE + 2 BELOW */}
         {/* TOP ROW */}
 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-  <AccountOverview completion={completion} />
+  <AccountOverview />
   <BusinessDetails />
 </div>
 
@@ -86,7 +85,7 @@ const Card = ({
 
 /* ───────────── SECTION 1 ───────────── */
 
-const AccountOverview = ({ completion }: { completion: number }) => (
+const AccountOverview = () => (
   <Card 
     title="Account Overview" 
     icon={User}

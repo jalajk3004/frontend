@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
-import { Quote, ArrowLeft, ArrowRight, Sparkles, Timer, Computer, ArrowUpNarrowWideIcon, Scale } from 'lucide-react';
+import { Quote, ArrowLeft, ArrowRight,  Timer, Computer, ArrowUpNarrowWideIcon, Scale } from 'lucide-react';
 
 const testimonials = [
   {

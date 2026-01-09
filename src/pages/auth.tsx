@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Mail, Lock, User, Eye, EyeOff, Sparkles, TrendingUp, Zap, CheckCircle2, AlertCircle, Dot, CircleArrowRightIcon } from 'lucide-react';
+import  { useState } from 'react';
+import { Mail, Lock, User, Eye, EyeOff, Sparkles, Zap, CheckCircle2, CircleArrowRightIcon } from 'lucide-react';
 
 export default function Auth() {
   const [authMode, setAuthMode] = useState('login');

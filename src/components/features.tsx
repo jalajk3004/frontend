@@ -171,7 +171,7 @@ function Features({ variant = "dark", showCTA = true }: FeaturesProps = {}) {
                     {feature.title}
                   </h3>
                 </div>
-                <ul className="mt-3 space-y-1 text-sm leading-relaxed text-white">
+                <ul className="mt-3 space-y-1 text-sm leading-relaxed ">
 
                   {feature.description.map((item, i) => (
                     <li key={i} className="flex items-start gap-2">

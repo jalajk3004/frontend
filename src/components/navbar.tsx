@@ -1,12 +1,22 @@
 import { Home, Settings, User, BadgeDollarSignIcon, MessageSquareIcon, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ExpandableTabs } from "./ui/expandable-tabs";
+import LogoIcon from "../assets/logo.svg"
 
 
-function Logo(){
-  <image href="/assets/logo.png"/>
+function Logo() {
+  const navigate = useNavigate();
+
+  return (
+    <img
+      src={LogoIcon}
+      alt="Logo"
+      className="h-8 w-auto cursor-pointer"
+      onClick={() => navigate("/")}
+      style={{ display: "inline-block" }}
+    />
+  );
 }
-
 function Navbar() {
   const navigate = useNavigate();
 
@@ -57,8 +67,8 @@ function AuthButton() {
 
   return (
     <div className="flex flex-col gap-4">
-      <ExpandableTabs 
-        tabs={tabs} 
+      <ExpandableTabs
+        tabs={tabs as any}
         activeColor="text-blue-500"
         onChange={handleChange}
       />

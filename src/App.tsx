@@ -1,5 +1,5 @@
 import Landing from "./components/landing";
-import { AuthButton,  Navbar } from "./components/navbar";
+import { AuthButton,  Logo,  Navbar } from "./components/navbar";
 import Achieve from "./components/achieve";
 import { Works } from "./components/works";
 import Features from "./components/features";
@@ -21,13 +21,13 @@ const Home = () => {
         {/* Navbar centered, auth button top-right */}
         <div className="pointer-events-none absolute inset-x-0 top-4 z-20 flex justify-center">
           <div className="pointer-events-auto flex w-full max-w-5xl items-center justify-between px-4">
-            {/* <div>
+            <div>
               <Logo/>
-            </div> */}
-            <div className=" px-4 py-2 ">
+            </div>
+            <div>
               <Navbar />
             </div>
-            <div className="ml-4">
+            <div >
               <AuthButton />
             </div>
           </div>
