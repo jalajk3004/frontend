@@ -225,7 +225,7 @@ export function PricingCard({
 					variant={plan.highlighted ? 'default' : 'outline'}
 					asChild
 				>
-					<Link href={plan.btn.href}>{plan.btn.text}</Link>
+					<Link ref={plan.btn.href}>{plan.btn.text}</Link>
 				</Button>
 			</div>
 		</div>

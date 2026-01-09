@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { PricingSection } from '@/components/ui/pricing';
 import { useNavigate } from 'react-router-dom';
 import { X } from 'lucide-react';
