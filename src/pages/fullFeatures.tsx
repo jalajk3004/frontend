@@ -1,5 +1,7 @@
 import Features from "@/components/features";
+import { AnimatedModalDemo } from "@/components/modal";
 import { Navbar } from "@/components/navbar";
+import type { Feature } from "@/types/feature";
 import {
   Bot,
   Gauge,
@@ -7,8 +9,11 @@ import {
   Rocket,
   Sparkles,
 } from "lucide-react";
+import { useState } from "react";
+
 
 const FullFeatures = () => {
+  const [selectedFeature, setSelectedFeature] = useState<Feature | null>(null);
   return (
     <>
     <div className="pointer-events-none absolute inset-x-0 top-4 z-20 flex justify-center">
@@ -97,7 +102,20 @@ const FullFeatures = () => {
       </section>
 
       {/* Detailed feature grid (11 core capabilities) */}
-      <Features variant="light" showCTA={false} />
+      <Features
+        variant="light"
+        showCTA={false}
+        button={true}
+        
+        onFeatureClick={(feature) =>
+          setSelectedFeature({ ...feature })
+        }
+      />
+
+      <AnimatedModalDemo
+        feature={selectedFeature}
+        onClose={() => setSelectedFeature(null)}
+      />
     </main>
 </>
   );
