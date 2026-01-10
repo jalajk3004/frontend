@@ -1,5 +1,6 @@
 import Features from "@/components/features";
 import { AnimatedModalDemo } from "@/components/modal";
+import { AICreativeIntelligenceModal } from "@/components/modals/AICreativeIntelligence";
 import { Navbar } from "@/components/navbar";
 import type { Feature } from "@/types/feature";
 import {
@@ -14,17 +15,10 @@ import { useState } from "react";
 
 const FullFeatures = () => {
   const [selectedFeature, setSelectedFeature] = useState<Feature | null>(null);
+  const [showAIChat, setShowAIChat] = useState(false);
   return (
     <>
-    <div className="pointer-events-none absolute inset-x-0 top-4 z-20 flex justify-center">
-          <div className="pointer-events-auto flex w-full max-w-5xl items-center justify-between px-4">
-            
-            <div className=" left-0 text-black ">
-              <Navbar />
-            </div>
-            
-          </div>
-        </div>
+    
         
     <main className="min-h-screen relative">
       {/* Light gradient background matching landing page */}
@@ -99,23 +93,40 @@ const FullFeatures = () => {
             />
           </div>
         </div>
-      </section>
+      </section> 
 
       {/* Detailed feature grid (11 core capabilities) */}
       <Features
-        variant="light"
-        showCTA={false}
-        button={true}
-        
-        onFeatureClick={(feature) =>
-          setSelectedFeature({ ...feature })
-        }
-      />
+          variant="light"
+          showCTA={false}
+          button={true}
+          onFeatureClick={(feature) => {
+            console.log("Feature clicked:", feature.key, feature.openMode);
+          
+            if (feature.openMode === "redirect" && feature.redirectTo) {
+              window.location.href = feature.redirectTo;
+              return;
+            }
+            if (feature.openMode === "direct") {
+              setShowAIChat(true);
+              setSelectedFeature(null);
+              return;
+            }
+            setSelectedFeature(feature);
+            setShowAIChat(false);
+          }}
+        />
 
-      <AnimatedModalDemo
-        feature={selectedFeature}
-        onClose={() => setSelectedFeature(null)}
-      />
+        {/* ✅ AI Chat opens directly (no modal) */}
+        {showAIChat && (
+          <AICreativeIntelligenceModal onClose={() => setShowAIChat(false)} />
+        )}
+
+        {/* ✅ Modal for other features */}
+        <AnimatedModalDemo
+          feature={selectedFeature}
+          onClose={() => setSelectedFeature(null)}
+        />
     </main>
 </>
   );
@@ -143,3 +154,26 @@ const FeaturePill = ({ icon: Icon, title, description, accent }: PillProps) => {
 };
 
 export default FullFeatures;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

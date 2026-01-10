@@ -1,5 +1,21 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+/* ---break---
+*/
+@custom-variant dark (&:is(.dark *));
 
 /* You can add optional Tailwind plugins like this:
    @plugin "tw-animate-css";
 */
+
+/* ---break---
+*/
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

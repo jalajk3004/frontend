@@ -4,12 +4,11 @@ import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter,
   ModalTrigger,
 } from "@/components/ui/animated-modal";
-import { Button } from "@/components/ui/button";
 import type { Feature } from "@/types/feature";
 import { useEffect, useRef } from "react";
+import { FEATURE_MODAL_CONTENT } from "./modals/registry";
 
 
 
@@ -25,8 +24,12 @@ export function AnimatedModalDemo({ feature, onClose }: FeatureModalProps) {
       triggerRef.current?.click();
     }
   }, [feature]);
+  if (!feature || feature.openMode === "direct") {
+    return null;
+  }
 
-  if (!feature) return null;
+
+  const modalContent = FEATURE_MODAL_CONTENT[feature.key];
 
   return (
     <Modal>
@@ -37,19 +40,16 @@ export function AnimatedModalDemo({ feature, onClose }: FeatureModalProps) {
         <ModalContent>
           <h4 className="text-lg md:text-2xl font-bold text-center mb-4">
             {feature.title}
+            
           </h4>
+          <div className="py-4">
+            {modalContent}
+          </div>
 
           
         </ModalContent>
 
-        <ModalFooter className="gap-4">
-          <Button variant="secondary" onClick={onClose}>
-            Cancel
-          </Button>
-          <Button variant="default">
-            Use this
-          </Button>
-        </ModalFooter>
+    
       </ModalBody>
     </Modal>
   );
