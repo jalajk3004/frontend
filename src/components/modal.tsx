@@ -17,7 +17,7 @@ interface FeatureModalProps {
   onClose: () => void;
 }
 
-export function AnimatedModalDemo({ feature, onClose }: FeatureModalProps) {
+export function AnimatedModalDemo({ feature }: FeatureModalProps) {
   const triggerRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     if (feature) {
@@ -34,7 +34,11 @@ export function AnimatedModalDemo({ feature, onClose }: FeatureModalProps) {
   return (
     <Modal>
       <ModalTrigger>
-      <div ref={triggerRef} className="hidden w-full cursor-pointer" />
+        <button
+          ref={triggerRef}
+          className="hidden w-full cursor-pointer"
+          aria-label="Open Modal"
+        />
       </ModalTrigger>
       <ModalBody>
         <ModalContent>

@@ -1,7 +1,6 @@
 import Features from "@/components/features";
 import { AnimatedModalDemo } from "@/components/modal";
 import { AICreativeIntelligenceModal } from "@/components/modals/AICreativeIntelligence";
-import { Navbar } from "@/components/navbar";
 import type { Feature } from "@/types/feature";
 import {
   Bot,

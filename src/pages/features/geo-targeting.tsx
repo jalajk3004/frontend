@@ -13,7 +13,6 @@ import {
 } from "chart.js";
 import { Line, Bar, Doughnut } from "react-chartjs-2";
 import {
-  Globe,
   Bot,
   MapPin,
   TrendingUp,
@@ -35,7 +34,6 @@ ChartJS.register(
 export default function GeoTargetingIntelligence() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50 p-8 text-slate-900">
-      {/* Header */}
       <header className="mb-10 flex items-center justify-between">
         <h1 className="text-3xl font-bold tracking-tight">
           Geo & Targeting Intelligence

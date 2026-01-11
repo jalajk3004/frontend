@@ -3,12 +3,9 @@
 
 import { useState } from "react";
 import {
-  ArrowDown,
-  ArrowUp,
   Bot,
   CheckCircle2,
   PauseCircle,
-  PlayCircle,
   TrendingDown,
   TrendingUp,
 } from "lucide-react";

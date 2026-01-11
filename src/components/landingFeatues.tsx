@@ -177,9 +177,9 @@ import {
                 >
                   <div className="flex items-center gap-3">
                     <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200/40 via-cyan-200/30 to-amber-100/30 text-emerald-800 ring-1 ring-emerald-300/40">
-                      <Icon className="h-6 w-6" />
+                      {Icon ? <Icon className="h-6 w-6" /> : null}
                     </span>
-  
+
                     <h3 className="text-lg font-semibold text-slate-900">
                       {feature.title}
                     </h3>

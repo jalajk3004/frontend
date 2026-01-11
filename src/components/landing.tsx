@@ -7,9 +7,7 @@ export default function Landing() {
     navigate("/multistepForm");
   };
 
-  const handleSecondaryClick = () => {
-    console.log("Explore Features clicked!");
-  };
+ 
 
   return (
     <HeroSection

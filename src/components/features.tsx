@@ -6,7 +6,6 @@ import {
   Cpu,
   Bot,
   LineChart,
-  Layers,
   Globe,
 } from "lucide-react";
 import { Button } from "./ui/button";
@@ -204,7 +203,7 @@ function Features({
                 <div className="flex items-center gap-3 relative text-white">
                   <span className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-200/30 via-cyan-200/25 to-amber-100/25 ring-1 ${isLight ? "text-emerald-700 ring-emerald-200/30" : "text-emerald-900 ring-white/10"
                     }`}>
-                    <Icon className="h-6 w-6" />
+                    {Icon ? <Icon className="h-6 w-6" /> : null}
                   </span>
                   <h3 className={`text-lg font-semibold ${isLight ? "text-slate-800" : "text-white"
                     }`}>
