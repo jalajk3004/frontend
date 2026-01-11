@@ -10,11 +10,13 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const FullFeatures = () => {
   const [selectedFeature, setSelectedFeature] = useState<Feature | null>(null);
   const [showAIChat, setShowAIChat] = useState(false);
+  const navigate = useNavigate();
   return (
     <>
     
@@ -103,7 +105,7 @@ const FullFeatures = () => {
             console.log("Feature clicked:", feature.key, feature.openMode);
           
             if (feature.openMode === "redirect" && feature.redirectTo) {
-              window.location.href = feature.redirectTo;
+              navigate(feature.redirectTo);
               return;
             }
             if (feature.openMode === "direct") {
