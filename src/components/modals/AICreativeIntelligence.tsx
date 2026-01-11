@@ -10,7 +10,7 @@ export function AICreativeIntelligenceModal({ onClose }: AICreativeIntelligenceM
   
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
-      <div className="relative w-full h-full max-w-7xl max-h-[90vh] bg-white dark:bg-gray-900 rounded-lg shadow-2xl overflow-hidden m-4">
+      <div className="relative w-full h-full max-w-7xl max-h-[90vh] bg-black dark:bg-gray-900 rounded-lg shadow-2xl overflow-hidden m-4">
         {/* Close button */}
         {onClose && (
           <button

@@ -177,7 +177,7 @@ export function PremiumTestimonials() {
       >
         {/* Header */}
         <motion.h2
-          className="text-4xl sm:text-6xl md:text-7xl font-bold mb-6 tracking-tight"
+          className="text-4xl sm:text-6xl md:text-7xl font-bold mb-6 tracking-tight text-emerald-900"
           variants={fadeInUp}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
@@ -198,7 +198,7 @@ export function PremiumTestimonials() {
         </motion.h2>
 
         <motion.p
-          className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed text-center m-2"
+          className="text-lg sm:text-xl  max-w-3xl mx-auto leading-relaxed text-center m-2 text-black"
           variants={fadeInUp}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
@@ -207,7 +207,6 @@ export function PremiumTestimonials() {
 
 
 
-        {/* Main Testimonial Display */}
         <div className="relative max-w-6xl mx-auto mb-16">
           <div className="relative h-[500px] md:h-[400px] perspective-1000">
             <AnimatePresence initial={false} custom={direction}>
@@ -227,7 +226,7 @@ export function PremiumTestimonials() {
                 className="absolute inset-0"
               >
                 <div className="relative h-full bg-gradient-to-br from-white/[0.12] to-white/[0.04] backdrop-blur-2xl rounded-3xl border border-white/[0.25] p-8 md:p-12">
-                  {/* Animated background gradient */}
+                
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.08] via-purple-500/[0.05] to-rose-500/[0.08] rounded-3xl"
                     animate={{
@@ -242,8 +241,7 @@ export function PremiumTestimonials() {
                       backgroundSize: '300% 300%'
                     }}
                   />
-
-                  {/* Quote icon */}
+=
                   <motion.div
                     className="absolute top-8 right-8 opacity-20"
                     animate={{ rotate: [0, 10, 0] }}
@@ -253,7 +251,6 @@ export function PremiumTestimonials() {
                   </motion.div>
 
                   <div className="relative z-10 h-full flex flex-col md:flex-row items-center gap-8">
-                    {/* User Info */}
                     <div className="flex-shrink-0 text-center md:text-left">
                       <motion.div
                         className="relative mb-6"
@@ -327,7 +324,6 @@ export function PremiumTestimonials() {
             </AnimatePresence>
           </div>
 
-          {/* Navigation Controls */}
           <div className="flex justify-center items-center gap-6 mt-8">
             <motion.button
               onClick={prevTestimonial}

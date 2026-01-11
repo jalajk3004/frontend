@@ -13,11 +13,11 @@ export default function CTA() {
         {/* Decorative grid */}
         <div className="pointer-events-none absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.15),transparent_40%)]" />
 
-        <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-emerald-950 md:text-4xl">
           Ready to Scale Your Brand?
         </h2>
 
-        <p className="mx-auto mt-4 max-w-2xl text-base text-white/70 md:text-lg">
+        <p className="mx-auto mt-4 max-w-2xl text-base text-black/70 md:text-lg">
           Join thousands of fast-growing brands using Raftra as their complete
           AI-powered marketing growth operating system.
         </p>
@@ -28,13 +28,13 @@ export default function CTA() {
             <ArrowRight className="h-4 w-4" />
           </button>
 
-          <button className="rounded-full border border-white/20 px-6 py-3 text-sm text-white/80 transition hover:bg-white/10">
+          <button className="rounded-full border border-white/20 px-6 py-3 text-sm text-black/80 transition hover:bg-white/10">
             Contact Sales
           </button>
         </div>
 
         {/* Trust line */}
-        <p className="mt-6 text-xs text-white/50">
+        <p className="mt-6 text-xs text-black/50">
           No credit card required · Cancel anytime
         </p>
       </div>

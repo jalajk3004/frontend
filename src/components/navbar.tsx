@@ -9,12 +9,19 @@ function Logo() {
 
   return (
     <img
-      src={LogoIcon}
-      alt="Logo"
-      className="h-8 w-auto cursor-pointer"
-      onClick={() => navigate("/")}
-      style={{ display: "inline-block" }}
-    />
+  src={LogoIcon}
+  alt="Raftra Logo"
+  onClick={() => navigate("/")}
+  className="
+    h-12 w-auto cursor-pointer
+    rounded-lg
+    transition
+    hover:opacity-90
+  "
+/>
+
+
+
   );
 }
 function Navbar() {
@@ -39,7 +46,7 @@ function Navbar() {
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col  gap-4">
       <ExpandableTabs tabs={tabs} onChange={handleChange} />
     </div>
   );

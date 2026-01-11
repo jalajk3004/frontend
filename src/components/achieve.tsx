@@ -30,10 +30,8 @@ const stats = [
 export default function Achieve() {
   return (
     <section className="relative w-full py-14">
-      {/* Translucent background */}
       <div className="absolute inset-0 bg-white/10 backdrop-blur-xl" />
 
-      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         
 
@@ -45,11 +43,11 @@ export default function Achieve() {
                 key={stat.id}
                 className="flex flex-col items-center justify-center gap-3"
               >
-                <Icon className="h-6 w-6 text-white/80" />
-                <span className="text-3xl font-semibold text-white">
+                <Icon className="h-6 w-6 text-emerald-900/80" />
+                <span className="text-3xl font-semibold text-emerald-950">
                   {stat.value}
                 </span>
-                <span className="text-sm text-white/70">
+                <span className="text-sm text-black/70">
                   {stat.label}
                 </span>
               </div>

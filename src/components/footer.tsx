@@ -70,8 +70,8 @@ export function Footer() {
       <div className="grid gap-10 xl:grid-cols-3">
         {/* Brand */}
         <AnimatedContainer className="space-y-4">
-          <FrameIcon className="h-8 w-8 text-white" />
-          <p className="text-sm text-white/60">
+          <FrameIcon className="h-8 w-8 text-black" />
+          <p className="text-sm text-black/60">
             © {new Date().getFullYear()} Raftra. All rights reserved.
           </p>
         </AnimatedContainer>
@@ -84,11 +84,11 @@ export function Footer() {
               delay={0.15 + index * 0.1}
             >
               <div>
-                <h3 className="text-xs font-medium uppercase tracking-wider text-white/80">
+                <h3 className="text-xs font-medium uppercase tracking-wider text-slate-950/80">
                   {section.label}
                 </h3>
 
-                <ul className="mt-4 space-y-2 text-sm text-white/60">
+                <ul className="mt-4 space-y-2 text-sm text-gray-800/60">
                   {section.links.map((link) => (
                     <li key={link.title}>
                       <a

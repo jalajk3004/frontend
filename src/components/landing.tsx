@@ -1,8 +1,10 @@
 import { HeroSection } from "@/components/ui/hero-section-with-smooth-bg-shader";
+import { useNavigate } from "react-router-dom";
 
 export default function Landing() {
+  const navigate = useNavigate();
   const handlePrimaryClick = () => {
-    console.log("Get Started for Free clicked!");
+    navigate("/multistepForm");
   };
 
   const handleSecondaryClick = () => {
@@ -13,10 +15,7 @@ export default function Landing() {
     <HeroSection
       distortion={1.9}
       speed={0.8}
-      trustBadge={{
-        text: "AI Marketing Growth OS.",
-        icons: ["✨"],
-      }}
+      
       heroHeadline={{
         line1: "Raftra",
         line2: "Full Growth OS For Your Brand",
@@ -26,10 +25,6 @@ export default function Landing() {
         primary: {
           text: "Get Started for Free",
           onClick: handlePrimaryClick,
-        },
-        secondary: {
-          text: "Explore Features",
-          onClick: handleSecondaryClick,
         },
       }}
     />
