@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import React, {
-  ReactNode,
+  type ReactNode,
   createContext,
   useContext,
   useEffect,
@@ -77,7 +77,7 @@ export const ModalBody = ({
   const { open, setOpen } = useModal();
   const modalRef = useRef<HTMLDivElement>(null);
 
-  useOutsideClick(modalRef, () => setOpen(false));
+  useOutsideClick(modalRef as React.RefObject<HTMLDivElement>, () => setOpen(false));
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";
